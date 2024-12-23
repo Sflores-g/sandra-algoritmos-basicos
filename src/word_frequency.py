@@ -1,7 +1,7 @@
 lista = {}
 frase = input("Frase:")
 lista_palabras=frase.split(" ")
-caracteres = [":",",","@", "!", "."]
+caracteres = [":",",","@", "!", ".", ";", "?", " "]
 
 for palabra in lista_palabras:
 	if palabra in caracteres:
@@ -12,9 +12,10 @@ for palabra in lista_palabras:
 	else:
 		lista[palabra]=1	
 
-sorted(lista)
+lista_ordenado = sorted(lista.items(), key =lambda x: x[1], reverse=True)
+#print(lista_ordenado)
 
-for campo,valor in lista.items():
+for campo,valor in lista_ordenado:
 	
 	print (campo,"->",valor)
 
